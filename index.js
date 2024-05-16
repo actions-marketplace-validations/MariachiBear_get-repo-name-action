@@ -6,13 +6,13 @@ import {
   capitalCase,
   constantCase,
   dotCase,
-  headerCase,
+  kebabCase,
   noCase,
-  paramCase,
   pascalCase,
   pathCase,
   sentenceCase,
   snakeCase,
+  trainCase,
 } from 'change-case';
 import repoName from 'git-repo-name';
 import userName from 'git-username';
@@ -58,13 +58,19 @@ try {
       finalRepositoryName = dotCase(originalRepositoryName);
       break;
     case 'headerCase':
-      finalRepositoryName = headerCase(originalRepositoryName);
+      finalRepositoryName = trainCase(originalRepositoryName);
+      break;
+    case 'trainCase':
+      finalRepositoryName = trainCase(originalRepositoryName);
       break;
     case 'noCase':
       finalRepositoryName = noCase(originalRepositoryName);
       break;
     case 'paramCase':
-      finalRepositoryName = paramCase(originalRepositoryName);
+      finalRepositoryName = kebabCase(originalRepositoryName);
+      break;
+    case 'kebabCase':
+      finalRepositoryName = kebabCase(originalRepositoryName);
       break;
     case 'pascalCase':
       finalRepositoryName = pascalCase(originalRepositoryName);
